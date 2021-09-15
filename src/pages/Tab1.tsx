@@ -1,26 +1,75 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab1.css';
+import {
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonMenu,
+  IonList,
+  IonItem,
+  IonRouterOutlet
+
+} from "@ionic/react";
+import "./Tab1.css";
 
 const Tab1: React.FC = () => {
   return (
-    <IonPage>
+    <>
+     <IonToolbar>
+          <IonTitle>Receitas</IonTitle>
+        </IonToolbar>
+    <IonMenu side="start" menuId="first">
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Home</IonTitle>
+        <IonToolbar color="primary">
+          <IonTitle>Start Menu</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Home</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+      <IonContent>
+        <IonList>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+        </IonList>
       </IonContent>
-      olá mundo 
-    </IonPage>
-  );
+    </IonMenu>
+
+    <IonMenu side="start" menuId="custom" className="my-custom-menu">
+      <IonHeader>
+        <IonToolbar color="tertiary">
+          <IonTitle>Custom Menu</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+        <IonList>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+        </IonList>
+      </IonContent>
+    </IonMenu>
+
+    <IonMenu side="end" type="push">
+      <IonHeader>
+        <IonToolbar color="danger">
+          <IonTitle>End Menu</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+        <IonList>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+        </IonList>
+      </IonContent>
+    </IonMenu>
+    <IonRouterOutlet></IonRouterOutlet>
+  </>
+);
 };
 
 export default Tab1;
